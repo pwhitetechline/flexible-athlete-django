@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Flexible Athlete{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="header-2">
+            <div class='title-block'> 
+                <h1>Massage Therapy Sarasota | Flexible Athlete Sports Massage</h1>
+                <h4>Muscle Therapy and Flexibility Training</h4>
+            </div>
+            <div class="box">
+                <div>
+                    <a href="https://www.google.com/search?ei=1q2GW7ujAYSSa_TLntgE&q=flexible+athlete+sarasota&oq=flexible+athlete+sarasota&gs_l=psy-ab.12..0i7i30k1.6962.7484.0.10020.2.2.0.0.0.0.212.420.2-2.2.0....0...1c.1.64.psy-ab..0.2.418....0.09_GPnX0WuE#lrd=0x88c3410de2ad20db:0x390ef714ef61bbf7,1,,," target="blank"><img src="{% static 'images/google-reviews-image.webp' %}" width="171" height="119" /></a>
+
+                </div>
+                <div class="business-info">
+                    <p class="phone">(919) 886-1861</p>
+                    <address class="address"> 
+                        <span>3023 Proctor Rd, Sarasota, FL 34239</span><br />
+                        (On the grounds of Unity Church<br />
+                        between Swift Rd and Beneva Rd)
+                    </address>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            {% comment %} <div class="logo">
+                <!-- Your logo here or site name -->
+                <a href="{% url 'home' %}">My Site</a>
+            </div> {% endcomment %}
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li>
+                    <a href="#">About</a>
+                    <ul class="nav-dropdown">
+                        <li><a href="{% url 'nutrition' %}">Sports Nutrition</a></li>
+                        <li><a href="{% url 'stories' %}">Success Stories</a></li>
+                        <!-- Add more links under About -->
+                    </ul>
+                </li>
+                <li><a href="{% url 'post_list' %}">Blog</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li>
+                    <a href="#">Videos</a>
+                    <ul class="nav-dropdown">
+                        <li><a href="{% url 'tinnitus' %}">Tinnitus Video</a></li>
+                        <li><a href="{% url 'interviews' %}">Interviews</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        {% block content %}
+        <!-- Content will be overridden in child templates -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Cygnus Marketing Group</p>
+    </footer>
+
+    {% block scripts %}
+    <!-- Scripts at the end to load the page faster -->
+    {% endblock %}
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            var navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        });
+        </script>
+</body>
+</html>
