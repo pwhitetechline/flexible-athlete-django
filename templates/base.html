@@ -1,76 +1,145 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}The Flexible Athlete{% endblock %}</title>
     {% block extrahead %}{% endblock %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
     <header>
-        <div class="header-2">
-            <div class='title-block'> 
-                <h1>Massage Therapy Sarasota | Flexible Athlete Sports Massage</h1>
-                <h4>Muscle Therapy and Flexibility Training</h4>
-            </div>
-            <div class="box">
-                <div>
-                    <a href="https://www.google.com/search?ei=1q2GW7ujAYSSa_TLntgE&q=flexible+athlete+sarasota&oq=flexible+athlete+sarasota&gs_l=psy-ab.12..0i7i30k1.6962.7484.0.10020.2.2.0.0.0.0.212.420.2-2.2.0....0...1c.1.64.psy-ab..0.2.418....0.09_GPnX0WuE#lrd=0x88c3410de2ad20db:0x390ef714ef61bbf7,1,,," target="blank"><img src="{% static 'images/google-reviews-image.webp' %}" width="171" height="119" /></a>
-
-                </div>
-                <div class="business-info">
-                    <p class="phone">(919) 886-1861</p>
-                    <address class="address"> 
-                        <span>3023 Proctor Rd, Sarasota, FL 34239</span><br />
-                        (On the grounds of Unity Church<br />
-                        between Swift Rd and Beneva Rd)
-                    </address>
-                </div>
-            </div>
+      <div class="header-2">
+        <div class="title-block">
+          <h1>Massage Therapy Sarasota | Flexible Athlete Sports Massage</h1>
+          <h4>Muscle Therapy and Flexibility Training</h4>
         </div>
-        <nav class="navbar">
-            {% comment %} <div class="logo">
-                <!-- Your logo here or site name -->
-                <a href="{% url 'home' %}">My Site</a>
-            </div> {% endcomment %}
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-list">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li>
-                    <a href="#">About</a>
-                    <ul class="nav-dropdown">
-                        <li><a href="{% url 'nutrition' %}">Sports Nutrition</a></li>
-                        <li><a href="{% url 'stories' %}">Success Stories</a></li>
-                        <!-- Add more links under About -->
-                    </ul>
-                </li>
-                <li><a href="{% url 'post_list' %}">Blog</a></li>
-                <li><a href="{% url 'products' %}">Products</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li>
-                    <a href="#">Videos</a>
-                    <ul class="nav-dropdown">
-                        <li><a href="{% url 'tinnitus' %}">Tinnitus Video</a></li>
-                        <li><a href="{% url 'interviews' %}">Interviews</a></li>
-                    </ul>
-                </li>
+        <div class="box">
+          <div>
+            <a
+              href="https://www.google.com/search?ei=1q2GW7ujAYSSa_TLntgE&q=flexible+athlete+sarasota&oq=flexible+athlete+sarasota&gs_l=psy-ab.12..0i7i30k1.6962.7484.0.10020.2.2.0.0.0.0.212.420.2-2.2.0....0...1c.1.64.psy-ab..0.2.418....0.09_GPnX0WuE#lrd=0x88c3410de2ad20db:0x390ef714ef61bbf7,1,,,"
+              target="blank"
+              ><img
+                src="{% static 'images/google-reviews-image.webp' %}"
+                width="171"
+                height="119"
+            /></a>
+          </div>
+          <div class="business-info">
+            <p class="phone">(919) 886-1861</p>
+            <address class="address">
+              <span>3023 Proctor Rd, Sarasota, FL 34239</span><br />
+              (On the grounds of Unity Church<br />
+              between Swift Rd and Beneva Rd)
+            </address>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar">
+        {% comment %}
+        <div class="logo">
+          <!-- Your logo here or site name -->
+          <a href="{% url 'home' %}">My Site</a>
+        </div>
+        {% endcomment %}
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>
+            <a href="#">About</a>
+            <ul class="nav-dropdown">
+              <li>
+                <a href="{% url 'julie_donnelly'  %}">Julie Donnelly</a>
+              </li>
+              <li>
+                <a href="{% url 'sports_nutrition' %}">Sports Nutrition</a>
+              </li>
+              <li>
+                <a href="{% url 'success_stories'  %}">Success Stories</a>
+              </li>
+              <li>
+                <a href="{% url 'flexible_athlete_treatment'  %}"
+                  >Flexible Athlete Treatment</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'focused_flexibilty_training'  %}"
+                  >Focused Flexibilty Training</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'wny_muscles_cause_pain'  %}"
+                  >Why Muscles Cause Pain</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'muscle_knots_cause_joint_pains'  %}"
+                  >Muscle Knots Cause Joint Pains</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'how_this_system_works_to_relieve_knots'  %}"
+                  >How this System Works to Relieve Knots</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'therapy_appointment'  %}"
+                  >Therpy Appointment</a
+                >
+              </li>
             </ul>
-        </nav>
+          </li>
+          <li><a href="{% url 'post_list' %}">Blog</a></li>
+          <li>
+            <a href="https://julstromethod.com/shop/" target="blank"
+              >Products</a
+            >
+          </li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li>
+            <a href="#">Videos</a>
+            <ul class="nav-dropdown">
+              <li><a href="{% url 'tinnitus' %}">Tinnitus Video</a></li>
+              <li><a href="{% url 'interviews' %}">Interviews</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main class="main-content">
-        {% block content %}
-        <!-- Content will be overridden in child templates -->
-        {% endblock %}
+    <main class="">
+      {% block content %}
+      <!-- Content will be overridden in child templates -->
+      {% endblock %}
     </main>
     <footer>
-        <p>&copy; 2024 Cygnus Marketing Group</p>
+      <div class="footer-content">
+        <p>
+          &copy; Flexible Athlete (919) 886-1861 | 3023 Proctor Rd, Suite 201,
+          Sarasota, FL 34231
+        </p>
+        <p>
+          The information on this site is not intended or implied to be a
+          substitute for professional medical advice, diagnosis, or treatment.
+          All content, including text, graphics, images, and information,
+          contained on or available through this website is for general
+          information purposes only.
+        </p>
+        <p>License - Florida MA73265 & New York 4678-1</p>
+        <div class="footer-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span>|</span>
+          <a href="/disclaimer">Disclaimer & Terms of Service</a>
+        </div>
+      </div>
     </footer>
 
     {% block scripts %}
@@ -78,10 +147,12 @@
     {% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
     <script>
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
+      document
+        .getElementById("mobile-menu")
+        .addEventListener("click", function () {
+          var navList = document.querySelector(".nav-list");
+          navList.classList.toggle("active");
         });
-        </script>
-</body>
+    </script>
+  </body>
 </html>
